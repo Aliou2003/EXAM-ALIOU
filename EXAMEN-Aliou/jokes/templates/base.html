@@ -1,0 +1,56 @@
+<!-- jokes/templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jokes{% endblock %}</title>
+    <style>
+        body {
+            background-color: #9f9f9f;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 16px;
+            text-align: center;
+            color: white;
+        }
+        main {
+            margin: 32px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+                <li><a href="{% url 'list-jokes' %}">List Jokes</a></li>
+                <li><a href="{% url 'create-joke' %}">Create Joke</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

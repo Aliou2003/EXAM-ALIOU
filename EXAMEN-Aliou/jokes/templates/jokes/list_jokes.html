@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+
+{% block title %}List Jokes{% endblock %}
+
+{% block content %}
+    <h2>All Jokes</h2>
+    <ul>
+        {% for joke in jokes %}
+            <li><a href="{% url 'detail-joke' joke.id %}">{{ joke.question }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
